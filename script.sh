@@ -17,6 +17,8 @@ PACKAGES="$(cat packages)"
 echo_stage "PACKAGES"
 $INSTALL_COMMAND $PACKAGES
 
+cargo install "$(cat cargo_packages)"
+
 if [ "$(find . -name "JetBrains Mono Regular Nerd Font Complete.ttf" | wc -l)" = "0" ]; then
 echo_stage "FONT"
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
