@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# sxhkd
+while :; do
+    if pgrep -x sxhkd > /dev/null; then
+        true
+    else
+        sxhkd &
+    fi
+    sleep 5
+done &
+
+bspc monitor -d I II III IV V VI VII
+
+bspc config automatic_scheme alternate
+bspc config initial_polarity second_child
+
+bspc config border_width 1
+bspc config window_gap 10
+
+bspc config top_padding 40
+bspc config left_padding 2
+bspc config right_padding 2
+bspc config bottom_padding 2
+
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle false
+bspc config focus_follows_pointer true
+bspc config center_pseudo_tiled true
+
+bspc rule -a firefox desktop=^1 follow=on
+
+# Xorg stuff, wallpaper
+sh ~/.on_startup.sh
