@@ -25,7 +25,7 @@ cargo install "$(cat cargo_packages)"
 echo_stage "STARSHIP PROMPT"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
-if [ "$(find . -name "JetBrains Mono Regular Nerd Font Complete.ttf" | wc -l)" = "0" ]; then
+if [ "$(find ~/.local/share/fonts -name "JetBrains Mono Regular Nerd Font Complete.ttf" | wc -l)" = "0" ]; then
 echo_stage "FONT"
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
 unzip JetBrainsMono.zip -d JetBrainsMono
