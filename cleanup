@@ -1,3 +1,2 @@
 #!/bin/sh
-rm -rf paru
-rm -rf ~/JetBrainsMono*
+rm -rf JetBrainsMono*
