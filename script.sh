@@ -17,6 +17,9 @@ PACKAGES="$(cat packages)"
 echo_stage "PACKAGES"
 $INSTALL_COMMAND $PACKAGES
 
+echo_stage "RUST"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup default nightly && rustup update
 cargo install "$(cat cargo_packages)"
 
 echo_stage "STARSHIP PROMPT"
